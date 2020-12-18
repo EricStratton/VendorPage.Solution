@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System;
 using VendorPage.Models;
 
-namespace VendorPage.Tests : IDisposable
+namespace VendorPage.Tests 
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
 
     public void Dispose()
     {
-      Item.ClearAll();
+      Order.ClearAll();
     }
-    
+
     [TestMethod]
     public void OrderContructor_CreatesIntanceOfOrder_Order()
     {
