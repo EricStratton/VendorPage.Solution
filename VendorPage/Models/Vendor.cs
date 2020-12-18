@@ -7,10 +7,12 @@ namespace VendorPage.Models
   {
 
       public string Name { get; set; }
+      public string Description { get; set; }
 
-      public Vendor(string vendorName)
+      public Vendor(string vendorName, string vendorDescription)
       {
         Name = vendorName;
+        Description = "Very impatient";
       }
   }
 }
