@@ -27,7 +27,7 @@ namespace VendorPage.Models
 
     public static Order Find(int searchId)
     {
-      return _intances[0];
+      return _intances[searchId-1];
     }
   }
 }
