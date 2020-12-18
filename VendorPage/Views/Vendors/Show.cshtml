@@ -1,8 +1,14 @@
 @using VendorPage.Models;
 
 <h3>Here are the vendor details and standing orders for this vendor:</h3>
-<h4>Account description: </h4>
+<h4>Account description: @Model["vendor"].Description </h4>
 
-<p><a href='/'>Home Page</a></p>
-<p><a href='/vendors'>Return to vendors page</a></p>
+<ol>
+
+</ol>
+
+
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Place a new order</a></p>
+<p><a href='/vendors'>Return to vendors page</a></p>
+<p><a href='/'>Home Page</a></p>
+

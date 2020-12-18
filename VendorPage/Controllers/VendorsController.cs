@@ -34,5 +34,18 @@ namespace VendorPage.Controllers
       model.Add("vendor", selectedVendor);
       return View(model);
     }
+
+    [HttpPost("/vendors/{vendorId}/orders")] // Create a new Order within a Vendor's profile
+    public ActionResult Create(int vendorId, string orderDescription)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderDescription);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }
   }
 }
