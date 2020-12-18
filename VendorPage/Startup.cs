@@ -13,7 +13,7 @@ namespace VendorPage
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
           .AddEnvironmentVariables();
-      Configuration = builder.Build()
+      Configuration = builder.Build();
     }
 
     public IConfigurationRoot Configuration { get; }

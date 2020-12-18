@@ -12,7 +12,7 @@ namespace VendorPage
         .UseContentRoot(Directory.GetCurrentDirectory())
         .UseIISIntegration()
         .UseStartup<Startup>()
-        .UseBuild();
+        .Build();
 
       host.Run();
     }
