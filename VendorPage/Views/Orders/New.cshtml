@@ -1,0 +1,8 @@
+<h1>Create new order for the @Model.Name account</h1>
+
+<form action="/vendors/@Model.Id/orders" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  <label for="orderDescription">Order</label>
+  <input id="orderDescription" name="orderDescription" type="text">
+  <button type="submit">Add order to account</button>
+</form>

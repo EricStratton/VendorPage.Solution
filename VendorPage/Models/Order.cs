@@ -8,11 +8,12 @@ namespace VendorPage.Models
     public int Id { get; set; }
     private static List<Order> _intances = new List<Order> {};
 
-    public Order(string description)
+    public Order(string orderDescription)
     {
-      Description = description;
+      Description = orderDescription;
       _intances.Add(this);
       Id = _intances.Count;
+      
     }
 
     public static List<Order> GetAll()
