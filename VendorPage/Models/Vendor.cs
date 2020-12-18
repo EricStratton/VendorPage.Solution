@@ -28,5 +28,10 @@ namespace VendorPage.Models
       {
         _instances.Clear();
       }
+
+      public static Vendor Find(int searchId)
+      {
+        return _instances[0];
+      }
   }
 }

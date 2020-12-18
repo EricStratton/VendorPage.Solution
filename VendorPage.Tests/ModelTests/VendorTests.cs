@@ -64,5 +64,17 @@ namespace VendorPage.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectVendorById_Vendor()
+    {
+      string name01 = "Pierre";
+      string name02 = "Steve";
+      string description01 = "Impatient";
+      string description02 = "Very Impatient";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
