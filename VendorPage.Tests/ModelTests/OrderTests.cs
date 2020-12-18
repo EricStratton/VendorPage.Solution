@@ -41,5 +41,17 @@ namespace VendorPage.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsCorrectOrderById_Order()
+    {
+      string description01 = "Baked goods order";
+      string description02 = "Bread order";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
