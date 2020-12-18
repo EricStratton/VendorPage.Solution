@@ -34,6 +34,16 @@ namespace VendorPage.Tests
       string result = newVendor.Description;
       Assert.AreEqual(result, description);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Test Vendor";
+      string description = "Test Description";
+      Vendor newVendor = new Vendor (name, description);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result); 
+    }
     
   }
 }
