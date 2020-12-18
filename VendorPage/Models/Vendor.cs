@@ -10,7 +10,7 @@ namespace VendorPage.Models
 
       public Vendor(string vendorName)
       {
-        Name = "Steve";
+        Name = vendorName;
       }
   }
 }
