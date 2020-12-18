@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System;
 using VendorPage.Models;
 
-namespace VendorPage.Tests
+namespace VendorPage.Tests : IDisposable
 {
   [TestClass]
   public class OrderTests
   {
+
+    public void Dispose()
+    {
+      Item.ClearAll();
+    }
+    
     [TestMethod]
     public void OrderContructor_CreatesIntanceOfOrder_Order()
     {
-      Order newOrder = new Order("Test Descriptionf");
+      Order newOrder = new Order("Test Description");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -24,16 +30,16 @@ namespace VendorPage.Tests
       Assert.AreEqual(description, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_ReturnOrderList_OrderList()
-    // {
-    //   string description01 = "Baked goods order";
-    //   string description02 = "Bread order";
-    //   Order newOrder1 = new Order(description01);
-    //   Order newOrder2 = new Order(description02);
-    //   List<Order> newList = new List<Order> { newOrder1, newOrder2 };
-    //   List<Order> result = Order.GetAll();
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void GetAll_ReturnOrderList_OrderList()
+    {
+      string description01 = "Baked goods order";
+      string description02 = "Bread order";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

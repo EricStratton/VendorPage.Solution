@@ -10,11 +10,17 @@ namespace VendorPage.Models
     public Order(string description)
     {
       Description = description;
+      _intances.Add(this);
     }
 
-    // public static List<Order> GetAll()
-    // {
-    //   return _intances;
-    // }
+    public static List<Order> GetAll()
+    {
+      return _intances;
+    }
+
+    public static void ClearAll()
+    {
+      _intances.Clear();
+    }
   }
 }
