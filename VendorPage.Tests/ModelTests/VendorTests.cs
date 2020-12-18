@@ -76,5 +76,18 @@ namespace VendorPage.Tests
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddOrder_PlacesAnOrderWithinAVendorProfile_OrderList()
+    {
+      string description = "Impatient";
+      Order newOrder = new Order(description);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Pierre";
+      Vendor newVendor = new Vendor(name, "Test description");
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

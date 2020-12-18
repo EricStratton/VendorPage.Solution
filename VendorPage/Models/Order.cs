@@ -13,7 +13,6 @@ namespace VendorPage.Models
       Description = orderDescription;
       _intances.Add(this);
       Id = _intances.Count;
-      
     }
 
     public static List<Order> GetAll()
