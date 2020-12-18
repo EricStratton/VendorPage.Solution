@@ -8,7 +8,7 @@ namespace VendorPage.Models
 
     public BreadOrder(int loaves)
     {
-      Loaves = 1;
+      Loaves = loaves;
     }
   }
 }
