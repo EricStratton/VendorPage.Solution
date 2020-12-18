@@ -10,5 +10,12 @@ namespace VendorPage.Controllers
     {
       return View();
     }
+
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
   }
 }
