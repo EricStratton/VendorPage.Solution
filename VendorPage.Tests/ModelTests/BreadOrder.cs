@@ -22,5 +22,15 @@ namespace VendorPage.Tests
       int result = newBreadOrder.Loaves;
       Assert.AreEqual(breadOrder, result);
     }
+
+    [TestMethod]
+    public void GetCost_ReturnsBreadOrderPriceWithDiscount_Int()
+    {
+      BreadOrder newBreadOrder = new BreadOrder(13);
+      int cost = newBreadOrder.GetCost(newBreadOrder.Loaves);
+      Console.WriteLine(cost);
+      Assert.AreEqual(45, cost);
+    }
+
   }
 }
