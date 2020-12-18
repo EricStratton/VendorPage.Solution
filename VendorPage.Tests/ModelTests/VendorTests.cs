@@ -6,8 +6,13 @@ using VendorPage.Models;
 namespace VendorPage.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -32,7 +37,7 @@ namespace VendorPage.Tests
       string description = "Test Description";
       Vendor newVendor = new Vendor(name, description);
       string result = newVendor.Description;
-      Assert.AreEqual(result, description);
+      Assert.AreEqual(description, result);
     }
 
     [TestMethod]
@@ -45,5 +50,19 @@ namespace VendorPage.Tests
       Assert.AreEqual(1, result); 
     }
     
+    [TestMethod]
+    public void Find_ReturnsAllVendorObjects_VendorList()
+    {
+      string name01 = "Pierre";
+      string name02 = "Steve";
+      string description01 = "Impatient";
+      string description02 = "Very Impatient";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }

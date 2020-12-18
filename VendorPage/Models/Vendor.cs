@@ -9,7 +9,7 @@ namespace VendorPage.Models
       public string Name { get; set; }
       public string Description { get; set; }
       public int Id { get; }
-      private List<Vendor> _instances = new List<Vendor> {};
+      private static List<Vendor> _instances = new List<Vendor> {};
 
       public Vendor(string vendorName, string vendorDescription)
       {
@@ -17,6 +17,16 @@ namespace VendorPage.Models
         Description = vendorDescription;
         _instances.Add(this);
         Id = _instances.Count;
+      }
+
+      public static List<Vendor> GetAll()
+      {
+        return _instances;
+      }
+
+      public static void ClearAll()
+      {
+        _instances.Clear();
       }
   }
 }
