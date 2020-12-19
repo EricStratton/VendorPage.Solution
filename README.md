@@ -62,12 +62,12 @@ Test | Input | Output |
 | :------------| :---------------| :-----------|
 | Order |
 | Create instance of Order | Order newOrder = new Order(); | newOrder |
-| Add order item quantity to PastryOrder instance | 10 | newPastryOrder.Pastries = 10; |
-| Calculate total cost of PastryOrder | newPastryOrder.GetCost(newPastryOrder.Pastries) | $17 |
-| BreadOrder|
-| Instantiate the BreadOrder constructor | BreadOrder newBreadOrder = new BreadOrder(); | newBreadOrder |
-| Add order item quantity to BreadOrder instance | 10 | newBreadOrder.Loaves = 10; |
-| Calculate total cost of BastryOrder | newBreadOrder.GetCost(newBreadOrder.Loaves) | $35 |
+| Add order description to Order instance | "For next Tuesday" | newOrder.Description = "For next Tuesday"; |
+| Find instance of Order by Id | newOrder.Id | 1 |
+| Vendor |
+| Create instance of Vendor | Vendor newVendor = new VendorOrder(); | newVendor |
+| Add Vendor description | "Bread orders only" | newVendor.Description = "Bread orders only"; |
+| Find instance of Vendor by Id | newVendor.Id | 1 |
 
 ### To run your own tests: 
 
