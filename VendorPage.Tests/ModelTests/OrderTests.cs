@@ -17,7 +17,7 @@ namespace VendorPage.Tests
     [TestMethod]
     public void OrderContructor_CreatesIntanceOfOrder_Order()
     {
-      Order newOrder = new Order("Test Description");
+      Order newOrder = new Order("Test Description", 0);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -25,9 +25,19 @@ namespace VendorPage.Tests
     public void GetOrderDescription_ReturnsOrderDescription_String()
     {
       string description = "Baked goods order";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, 0);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void GetOrderPrice_ReturnsOrderPrice_Int()
+    {
+      string description = "Baked goods order";
+      int price = 15;
+      Order newOrder = new Order(description, price);
+      int result = newOrder.Price;
+      Assert.AreEqual(price, result);
     }
 
     [TestMethod]
@@ -35,8 +45,8 @@ namespace VendorPage.Tests
     {
       string description01 = "Baked goods order";
       string description02 = "Bread order";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order(description01, 0);
+      Order newOrder2 = new Order(description02, 1);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -47,8 +57,8 @@ namespace VendorPage.Tests
     {
       string description01 = "Baked goods order";
       string description02 = "Bread order";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order(description01, 0);
+      Order newOrder2 = new Order(description02, 1);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       Order result = Order.Find(2);
       Assert.AreEqual(newOrder2, result);
