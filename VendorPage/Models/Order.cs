@@ -14,7 +14,7 @@ namespace VendorPage.Models
     {
       Description = orderDescription;
       Price = orderPrice;
-      Date = "Jan 15";
+      Date = orderDate;
       _intances.Add(this);
       Id = _intances.Count;
     }
