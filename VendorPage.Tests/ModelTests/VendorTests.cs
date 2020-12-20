@@ -81,7 +81,7 @@ namespace VendorPage.Tests
     public void AddOrder_PlacesAnOrderWithinAVendorProfile_OrderList()
     {
       string description = "Impatient";
-      Order newOrder = new Order(description, 0);
+      Order newOrder = new Order(description, 0, "Dec 21");
       List<Order> newList = new List<Order> { newOrder };
       string name = "Pierre";
       Vendor newVendor = new Vendor(name, "Test description");
